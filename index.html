@@ -26,8 +26,38 @@
       <p>
         <a
           role="button"
-          href="javascript:(function(){var selectedText=window.getSelection().toString();var prefix=prompt('Enter prefix', 'Reply to this: ');if(selectedText){var encodedText=encodeURIComponent(prefix + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
+          href="javascript:(function(){var selectedText=window.getSelection().toString();var prefix=prompt('Enter prompt prefix', '');if(selectedText){var encodedText=encodeURIComponent(prefix + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
+          >Send to ChatGPT</a
+        >
+      </p>
+      <h2>Chat GPT English</h2>
+      <p>
+        <a
+          role="button"
+          href="javascript:(function(){var selectedText=window.getSelection().toString();if(selectedText){var encodedText=encodeURIComponent('Reply to this: ' + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
           >ChatGPT reply</a
+        >
+      </p>
+      <p>
+        <a
+          role="button"
+          href="javascript:(function(){var selectedText=window.getSelection().toString();if(selectedText){var encodedText=encodeURIComponent('Paraphrase: ' + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
+          >ChatGPT paraphrase</a
+        >
+      </p>
+      <h2>Chat GPT Spanish</h2>
+      <p>
+        <a
+          role="button"
+          href="javascript:(function(){var selectedText=window.getSelection().toString();if(selectedText){var encodedText=encodeURIComponent('Responde a esto: ' + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
+          >ChatGPT responde</a
+        >
+      </p>
+      <p>
+        <a
+          role="button"
+          href="javascript:(function(){var selectedText=window.getSelection().toString();if(selectedText){var encodedText=encodeURIComponent('Parafrasea: ' + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
+          >ChatGPT parafrasea</a
         >
       </p>
     </main>
