@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge's Bookmarklets</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Jorge's Bookmarklets</h1>
+      <p>
+        <a
+          role="button"
+          href="javascript:(function(){document.querySelectorAll('body *').forEach(function(node){if(['fixed','sticky'].includes(getComputedStyle(node).position)){node.parentNode.removeChild(node)}});document.querySelectorAll('html *').forEach(function(node){var s=getComputedStyle(node);if('hidden'===s['overflow']){node.style.setProperty('overflow', 'visible', 'important');}if('hidden'===s['overflow-x']){node.style.setProperty('overflow-x', 'visible', 'important');}if('hidden'===s['overflow-y']){node.style.setProperty('overflow-y', 'visible', 'important');}});var htmlNode=document.querySelector('html');htmlNode.style.setProperty('overflow', 'visible', 'important');;htmlNode.style.setProperty('overflow-x', 'visible', 'important');;htmlNode.style.setProperty('overflow-y', 'visible', 'important');})();"
+          >Kill Sticky</a
+        >
+        Source:
+        <a href="https://github.com/t-mart/kill-sticky"
+          >github.com/t-mart/kill-sticky</a
+        >
+      </p>
+      <p>
+        <a
+          role="button"
+          href="javascript:(function(){var selectedText=window.getSelection().toString();var prefix=prompt('Enter prefix', 'Reply to this: ');if(selectedText){var encodedText=encodeURIComponent(prefix + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
+          >ChatGPT reply</a
+        >
+      </p>
+    </main>
+  </body>
+</html>
