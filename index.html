@@ -6,25 +6,26 @@
     <title>Jorge's Bookmarklets</title>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.cyan.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2290%22>📑</text></svg>"
     />
   </head>
   <body>
-    <main class="container">
-      <h1>Jorge's Bookmarklets</h1>
-      <p>Drag the buttons to the bookmarks bar for easy access.</p>
-      <h2>Sticky modals</h2>
+    <header>
+      <h1>📑 Jorge's Bookmarklets</h1>
       <p>
-        <a
-          role="button"
-          href="javascript:(function(){document.querySelectorAll('body *').forEach(function(node){if(['fixed','sticky'].includes(getComputedStyle(node).position)){node.parentNode.removeChild(node)}});document.querySelectorAll('html *').forEach(function(node){var s=getComputedStyle(node);if('hidden'===s['overflow']){node.style.setProperty('overflow', 'visible', 'important');}if('hidden'===s['overflow-x']){node.style.setProperty('overflow-x', 'visible', 'important');}if('hidden'===s['overflow-y']){node.style.setProperty('overflow-y', 'visible', 'important');}});var htmlNode=document.querySelector('html');htmlNode.style.setProperty('overflow', 'visible', 'important');;htmlNode.style.setProperty('overflow-x', 'visible', 'important');;htmlNode.style.setProperty('overflow-y', 'visible', 'important');})();"
-          >Kill Sticky</a
-        >
-        Source:
-        <a href="https://github.com/t-mart/kill-sticky"
-          >github.com/t-mart/kill-sticky</a
-        >
+        <strong>Installation</strong>: Drag the buttons to the bookmarks bar.
       </p>
+      <p>
+        <strong>Usage</strong>: Click on the bookmark when visiting the target
+        page.
+      </p>
+    </header>
+    <main>
       <h2>ChatGPT</h2>
 
       <p>Send the selected text to ChatGPT with a prefix.</p>
@@ -43,8 +44,6 @@
           href="javascript:(function(){var selectedText=window.getSelection().toString();if(selectedText){var encodedText=encodeURIComponent('Reply to this: ' + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
           >ChatGPT reply</a
         >
-      </p>
-      <p>
         <a
           role="button"
           href="javascript:(function(){var selectedText=window.getSelection().toString();if(selectedText){var encodedText=encodeURIComponent('Paraphrase: ' + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
@@ -58,14 +57,35 @@
           href="javascript:(function(){var selectedText=window.getSelection().toString();if(selectedText){var encodedText=encodeURIComponent('Responde a esto: ' + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
           >ChatGPT responde</a
         >
-      </p>
-      <p>
         <a
           role="button"
           href="javascript:(function(){var selectedText=window.getSelection().toString();if(selectedText){var encodedText=encodeURIComponent('Parafrasea: ' + selectedText);window.open('https://chat.openai.com/?q='+encodedText,'_blank');}else{alert('No text selected.');}})();"
           >ChatGPT parafrasea</a
         >
       </p>
+      <h2>Sticky modals</h2>
+      <p>Remove a dialog (e.g. cookies, paywalls, etc.)</p>
+      <p>
+        <a
+          role="button"
+          href="javascript:(function(){document.querySelectorAll('body *').forEach(function(node){if(['fixed','sticky'].includes(getComputedStyle(node).position)){node.parentNode.removeChild(node)}});document.querySelectorAll('html *').forEach(function(node){var s=getComputedStyle(node);if('hidden'===s['overflow']){node.style.setProperty('overflow', 'visible', 'important');}if('hidden'===s['overflow-x']){node.style.setProperty('overflow-x', 'visible', 'important');}if('hidden'===s['overflow-y']){node.style.setProperty('overflow-y', 'visible', 'important');}});var htmlNode=document.querySelector('html');htmlNode.style.setProperty('overflow', 'visible', 'important');;htmlNode.style.setProperty('overflow-x', 'visible', 'important');;htmlNode.style.setProperty('overflow-y', 'visible', 'important');})();"
+          >Kill Sticky</a
+        >
+        <small>
+          (based on
+          <a href="https://github.com/t-mart/kill-sticky"
+            >github.com/t-mart/kill-sticky</a
+          >)
+        </small>
+      </p>
     </main>
+    <footer>
+      <small>
+        Source:
+        <a href="https://github.com/jorgebg/bookmarklets"
+          >github.com/jorgebg/bookmarklets</a
+        >
+      </small>
+    </footer>
   </body>
 </html>
